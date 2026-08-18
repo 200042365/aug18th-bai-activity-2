@@ -38,7 +38,7 @@ function render() {
         doneBtn.textContent = task.done ? "UNDO" : "MARK AS DONE";
 
         doneBtn.addEventListener("click", () => {
-            tasks[i].done = !tasks[i].done;
+            tasks[i].done = !tasks[i].done;     // takes the done state and inverts 
             saveTasks();
             render();
         });
@@ -81,9 +81,9 @@ taskInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") addBtn.click();
 }); 
 
-
+    // this attaches the click event to the button
 clearBtn.addEventListener("click", () => {
-    tasks.length = 0;
+    tasks.length = 0;           // clears all tasks and local storage
     localStorage.removeItem("tasks");
     render();
 });
